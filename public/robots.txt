@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://sjdauto.com.au/sitemap.xml
