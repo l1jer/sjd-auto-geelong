@@ -143,7 +143,7 @@ float cnoise(vec3 P){
 const Beams = ({
   beamWidth = 2,
   beamHeight = 25,
-  beamNumber = 12,
+  beamNumber = 25,
   lightColor = '#ffffff',
   speed = 3,
   noiseIntensity = 1.75,

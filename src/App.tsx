@@ -21,11 +21,11 @@ export default function App() {
     <>
       <div className="beams-bg">
         <Beams
-          beamWidth={4.7}
-          beamHeight={30}
+          beamWidth={2}
+          beamHeight={25}
           beamNumber={20}
           lightColor="#ffdf0f"
-          speed={1}
+          speed={2}
           noiseIntensity={1.75}
           scale={0.2}
           rotation={30}
