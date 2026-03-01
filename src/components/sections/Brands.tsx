@@ -36,7 +36,7 @@ export function Brands() {
             {BRAND_ITEMS.map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="flex gap-4 rounded-2xl border border-white/10 bg-black p-7"
+                className="flex gap-4 rounded-2xl border border-white/10 bg-black/70 p-7"
               >
                 <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand/10 border border-brand/20 text-brand mt-0.5">
                   <Icon className="size-5" />
@@ -71,7 +71,7 @@ export function Brands() {
               loading="lazy"
               className="relative w-full rounded-2xl border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.4)]"
             />
-            <div className="mt-6 rounded-2xl border border-white/10 bg-black p-6">
+            <div className="mt-6 rounded-2xl border border-white/10 bg-black/70 p-6">
               <p className="text-[0.95rem] text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Why does oil quality matter?</strong>{" "}
                 Engine oil breaks down over time through heat, contamination and oxidation. Using a premium oil like Fuchs TITAN extends the service interval, reduces internal wear and maintains fuel efficiency — all of which protect your engine's long-term health and resale value.
