@@ -28,7 +28,7 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-40">
+    <header className="sticky top-[40px] z-40">
       <div
         className={cn(
           "mx-auto px-4 transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]",
@@ -38,23 +38,26 @@ export function Navbar() {
         <GlassSurface
           width="100%"
           height="auto"
-          borderRadius={999}
-          borderWidth={0.04}
-          brightness={40}
-          opacity={0.95}
-          blur={14}
-          backgroundOpacity={scrolled ? 0.35 : 0}
-          saturation={1.2}
-          className={cn(
-            "transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]",
-            scrolled ? "glass-active shadow-[0_8px_32px_rgba(0,0,0,0.3)]" : "!shadow-none"
-          )}
-          style={{ borderRadius: 999 }}
+          borderRadius={30}
+          borderWidth={0.07}
+          brightness={50}
+          opacity={0.5}
+          blur={11}
+          displace={2}
+          distortionScale={-300}
+          redOffset={0}
+          greenOffset={10}
+          blueOffset={15}
+          mixBlendMode="screen"
+          backgroundOpacity={scrolled ? 0.075 : 0}
+          saturation={1}
+          className="transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+          style={{ borderRadius: 30 }}
         >
           <div
             className={cn(
               "flex items-center w-full transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]",
-              scrolled ? "px-5 py-2.5" : "px-6 py-4",
+              scrolled ? "px-5 py-1" : "px-6 py-2",
               "md:justify-between justify-center" // Center logo on mobile, space-between on desktop
             )}
           >

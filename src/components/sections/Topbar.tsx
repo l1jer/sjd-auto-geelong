@@ -1,103 +1,70 @@
-import { Phone, MapPin, Mail, Facebook, Instagram } from "lucide-react"
+import { Phone, MapPin, Mail, MessageSquare} from "lucide-react"
+import { contact } from "@/lib/contact"
 
 export function Topbar() {
   return (
-    <div className="relative z-50 border-b border-white/10 bg-black/60 backdrop-blur-sm text-[0.8rem]">
+    <div className="sticky top-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur-sm text-[1rem]">
       <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-2 px-4 py-2">
 
-        {/* Left: primary contact actions */}
-        <div className="flex items-center gap-2 min-w-0">
-          {/* Mobile: both phone numbers displayed */}
-          <div className="flex items-center gap-2 sm:hidden">
-            <span className="text-white/60 text-[0.78rem]">03 5242 8307</span>
-            <span className="text-white/25">·</span>
-            <span className="text-white/60 text-[0.78rem]">0404 724 145</span>
-            <span className="text-white/25">·</span>
-            <a
-              href="mailto:sjd.autotrust@gmail.com"
-              className="text-white/60 hover:text-brand transition-colors"
-              aria-label="Email SJD Automotive"
-            >
-              <Mail className="size-3.5" />
-            </a>
-            <span className="text-white/25">·</span>
-            <a
-              href="https://goo.gl/maps/HbCyurbJjYym9eZf9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/60 hover:text-brand transition-colors"
-              aria-label="Get directions to SJD Automotive"
-            >
-              <MapPin className="size-3.5" />
-            </a>
+          {/* Mobile layout: phones fill left, icons pinned right */}
+          <div className="flex w-full items-center justify-between gap-2 sm:hidden">
+            <div className="flex items-center gap-2 min-w-0">
+              <a href={contact.phone1.href} className="text-brand hover:opacity-80 transition-opacity shrink-0" aria-label="Call SJD Automotive main line">
+                {contact.phone1.display}
+              </a>
+              <span className="text-white/25">·</span>
+              <a href={contact.phone2.href} className="text-brand hover:opacity-80 transition-opacity shrink-0" aria-label="Call SJD Automotive mobile">
+                {contact.phone2.display}
+              </a>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <a href={contact.sms.href} className="text-brand hover:opacity-80 transition-opacity" aria-label="Send SMS to SJD Automotive">
+                <MessageSquare className="size-4" />
+              </a>
+              <a href={contact.email.href} className="text-brand hover:opacity-80 transition-opacity" aria-label="Email SJD Automotive">
+                <Mail className="size-4" />
+              </a>
+              <a href={contact.maps.link} target="_blank" rel="noopener noreferrer" className="text-brand hover:opacity-80 transition-opacity" aria-label="Get directions to SJD Automotive">
+                <MapPin className="size-4" />
+              </a>
+            </div>
           </div>
 
-          {/* Desktop: full contact info with labels */}
+          {/* Desktop layout */}
+          {/* Left side: phones and SMS */}
           <div className="hidden sm:flex items-center gap-3">
-            <a
-              href="tel:0352428307"
-              className="inline-flex items-center gap-1.5 text-white/60 hover:text-brand transition-colors shrink-0"
-              aria-label="Call SJD Automotive main line"
-            >
+            <a href={contact.phone1.href} className="inline-flex items-center gap-1.5 text-brand hover:opacity-80 transition-opacity shrink-0" aria-label="Call SJD Automotive main line">
               <Phone className="size-3.5 shrink-0" />
-              <span>03 5242 8307</span>
+              <span>{contact.phone1.display}</span>
             </a>
 
             <span className="text-white/25">·</span>
-            <a
-              href="tel:0404724145"
-              className="text-white/60 hover:text-brand transition-colors"
-            >
-              0404 724 145
+            <a href={contact.phone2.href} className="text-brand hover:opacity-80 transition-opacity" aria-label="Call SJD Automotive mobile">
+              {contact.phone2.display}
             </a>
 
             <span className="text-white/25">·</span>
-            <a
-              href="https://goo.gl/maps/HbCyurbJjYym9eZf9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-white/60 hover:text-brand transition-colors min-w-0"
-              aria-label="Get directions to SJD Automotive"
-            >
-              <MapPin className="size-3.5 shrink-0" />
-              <span className="truncate">1/25 Rodney Rd, North Geelong VIC</span>
-            </a>
-
-            <span className="text-white/25">·</span>
-            <a
-              href="mailto:sjd.autotrust@gmail.com"
-              className="inline-flex items-center gap-1.5 text-white/60 hover:text-brand transition-colors"
-              aria-label="Email SJD Automotive"
-            >
-              <Mail className="size-3.5 shrink-0" />
-              <span>sjd.autotrust@gmail.com</span>
+            <a href={contact.sms.href} className="inline-flex items-center gap-1.5 text-brand hover:opacity-80 transition-opacity" aria-label="Send SMS to SJD Automotive">
+              <MessageSquare className="size-3.5 shrink-0" />
+              <span>SMS US</span>
             </a>
           </div>
-        </div>
 
-        {/* Right: social icons — always visible */}
-        <div className="flex items-center gap-3 shrink-0">
-          <a
-            href="https://www.facebook.com/SJD-Automotive-108170801468329/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="SJD Automotive on Facebook"
-            className="text-white/50 hover:text-brand transition-colors"
-          >
-            <Facebook className="size-3.5" />
-          </a>
-          <a
-            href="https://www.instagram.com/sjd_automotive/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="SJD Automotive on Instagram"
-            className="text-white/50 hover:text-brand transition-colors"
-          >
-            <Instagram className="size-3.5" />
-          </a>
+          {/* Right side: email and address */}
+          <div className="hidden sm:flex items-center gap-3">
+            <a href={contact.email.href} className="inline-flex items-center gap-1.5 text-brand hover:opacity-80 transition-opacity" aria-label="Email SJD Automotive">
+              <Mail className="size-3.5 shrink-0" />
+              <span>{contact.email.display}</span>
+            </a>
+
+            <span className="text-white/25">·</span>
+            <a href={contact.maps.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-brand hover:opacity-80 transition-opacity min-w-0" aria-label="Get directions to SJD Automotive">
+              <MapPin className="size-3.5 shrink-0" />
+              <span className="truncate">{contact.maps.display}</span>
+            </a>
+          </div>
         </div>
 
       </div>
-    </div>
   )
 }

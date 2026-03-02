@@ -1,4 +1,5 @@
 import { Wrench, Clock, Star, MapPin } from "lucide-react"
+import { SpotlightCard } from "@/components/ui/spotlight-card"
 
 const HIGHLIGHTS = [
   { icon: Wrench, label: "Full-service mechanical workshop" },
@@ -29,7 +30,10 @@ export function About() {
               className="relative rounded-2xl border border-white/10 w-full object-cover shadow-[0_24px_60px_rgba(0,0,0,0.4)]"
             />
           </div>
-          <div className="reveal reveal--delay-1 flex flex-col gap-7">
+          <SpotlightCard
+            className="reveal reveal--delay-1 flex flex-col gap-7 p-8 md:p-10"
+            spotlightColor="rgba(255, 122, 0, 0.12)"
+          >
             <div>
               <h3 className="text-xl font-extrabold text-foreground mb-3">Our Story</h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -58,7 +62,7 @@ export function About() {
                 </li>
               ))}
             </ul>
-          </div>
+          </SpotlightCard>
         </div>
       </div>
     </section>

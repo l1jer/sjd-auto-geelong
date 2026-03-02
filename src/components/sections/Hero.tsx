@@ -2,7 +2,10 @@ import { Button } from "@/components/ui/button"
 
 export function Hero() {
   return (
-    <section id="hero" className="pt-[clamp(4.5rem,9vw,8rem)] pb-[clamp(4.5rem,8vw,8rem)]">
+    <section
+      id="hero"
+      className="h-[calc(100svh-200px)] overflow-hidden md:h-auto flex items-center md:block pt-[clamp(4.5rem,9vw,8rem)] pb-[clamp(4.5rem,8vw,8rem)]"
+    >
       <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-[clamp(2rem,4vw,4rem)] px-[1.5rem] lg:grid-cols-[1.05fr_0.95fr]">
         <div className="reveal">
           <p className="text-brand text-[0.88rem] font-bold uppercase tracking-widest">
@@ -23,7 +26,7 @@ export function Hero() {
             </Button>
           </div>
         </div>
-        <div className="reveal reveal--delay-1 overflow-hidden rounded-3xl border border-white/8 shadow-[0_20px_48px_rgba(0,0,0,0.35)]">
+        <div className="hidden lg:block reveal reveal--delay-1 overflow-hidden rounded-3xl border border-white/8 shadow-[0_20px_48px_rgba(0,0,0,0.35)]">
           <img
             src="/img/promises.jpg"
             alt="A car being serviced at SJD Automotive workshop in North Geelong, VIC"

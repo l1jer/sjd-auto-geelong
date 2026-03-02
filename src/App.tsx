@@ -13,6 +13,7 @@ import { Reviews } from "@/components/sections/Reviews"
 import { Contact } from "@/components/sections/Contact"
 import { Footer } from "@/components/sections/Footer"
 import { BackToTop } from "@/components/BackToTop"
+import { FloatingContact } from "@/components/FloatingContact"
 
 export default function App() {
   useReveal()
@@ -45,6 +46,7 @@ export default function App() {
       </main>
       <Footer />
       <BackToTop />
+      <FloatingContact />
     </>
   )
 }
