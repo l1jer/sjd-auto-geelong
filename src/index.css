@@ -266,3 +266,9 @@ section > div > div > span{
   --mouse-y: 50%;
   --spotlight-color: rgba(255, 255, 255, 0.05);
 }
+
+@media (max-width: 640px) {
+  .glass-surface__content {
+    backdrop-filter: blur(12px);
+  }
+}
